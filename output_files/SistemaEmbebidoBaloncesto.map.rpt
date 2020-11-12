@@ -1,0 +1,1034 @@
+Analysis & Synthesis report for SistemaEmbebidoBaloncesto
+Tue May 06 03:00:12 2014
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |SistemaEmbebidoBaloncesto|UART:inst8|estado
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: 7485:inst28
+ 15. Parameter Settings for User Entity Instance: 7485:inst27
+ 16. Parameter Settings for User Entity Instance: 7485:inst18
+ 17. Parameter Settings for User Entity Instance: 7485:inst17
+ 18. Parameter Settings for User Entity Instance: 7485:inst30
+ 19. Parameter Settings for User Entity Instance: 7485:inst29
+ 20. Parameter Settings for User Entity Instance: 7485:inst22
+ 21. Parameter Settings for User Entity Instance: 7485:inst21
+ 22. Parameter Settings for User Entity Instance: 7485:inst26
+ 23. Parameter Settings for User Entity Instance: 7485:inst25
+ 24. Parameter Settings for User Entity Instance: 7485:inst20
+ 25. Parameter Settings for User Entity Instance: 7485:inst19
+ 26. Parameter Settings for User Entity Instance: 7485:inst32
+ 27. Parameter Settings for User Entity Instance: 7485:inst31
+ 28. Parameter Settings for User Entity Instance: 7485:inst42
+ 29. Parameter Settings for User Entity Instance: 7485:inst41
+ 30. Parameter Settings for User Entity Instance: 7485:inst24
+ 31. Parameter Settings for User Entity Instance: 7485:inst23
+ 32. Parameter Settings for User Entity Instance: 7485:inst62
+ 33. Parameter Settings for User Entity Instance: 7485:inst56
+ 34. Parameter Settings for User Entity Instance: 7485:inst73
+ 35. Parameter Settings for User Entity Instance: 7485:inst72
+ 36. Parameter Settings for User Entity Instance: 7485:inst74
+ 37. Parameter Settings for User Entity Instance: 7485:inst75
+ 38. Elapsed Time Per Partition
+ 39. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue May 06 03:00:12 2014      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; SistemaEmbebidoBaloncesto                  ;
+; Top-level Entity Name              ; SistemaEmbebidoBaloncesto                  ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 780                                        ;
+;     Total combinational functions  ; 778                                        ;
+;     Dedicated logic registers      ; 156                                        ;
+; Total registers                    ; 156                                        ;
+; Total pins                         ; 20                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                      ;
++----------------------------------------------------------------------------+---------------------------+---------------------------+
+; Option                                                                     ; Setting                   ; Default Value             ;
++----------------------------------------------------------------------------+---------------------------+---------------------------+
+; Device                                                                     ; EP4CE22F17C6              ;                           ;
+; Top-level entity name                                                      ; SistemaEmbebidoBaloncesto ; SistemaEmbebidoBaloncesto ;
+; Family name                                                                ; Cyclone IV E              ; Cyclone IV GX             ;
+; Use smart compilation                                                      ; Off                       ; Off                       ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                        ; On                        ;
+; Enable compact report table                                                ; Off                       ; Off                       ;
+; Restructure Multiplexers                                                   ; Auto                      ; Auto                      ;
+; Create Debugging Nodes for IP Cores                                        ; Off                       ; Off                       ;
+; Preserve fewer node names                                                  ; On                        ; On                        ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                       ; Off                       ;
+; Verilog Version                                                            ; Verilog_2001              ; Verilog_2001              ;
+; VHDL Version                                                               ; VHDL_1993                 ; VHDL_1993                 ;
+; State Machine Processing                                                   ; Auto                      ; Auto                      ;
+; Safe State Machine                                                         ; Off                       ; Off                       ;
+; Extract Verilog State Machines                                             ; On                        ; On                        ;
+; Extract VHDL State Machines                                                ; On                        ; On                        ;
+; Ignore Verilog initial constructs                                          ; Off                       ; Off                       ;
+; Iteration limit for constant Verilog loops                                 ; 5000                      ; 5000                      ;
+; Iteration limit for non-constant Verilog loops                             ; 250                       ; 250                       ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                        ; On                        ;
+; Infer RAMs from Raw Logic                                                  ; On                        ; On                        ;
+; Parallel Synthesis                                                         ; On                        ; On                        ;
+; DSP Block Balancing                                                        ; Auto                      ; Auto                      ;
+; NOT Gate Push-Back                                                         ; On                        ; On                        ;
+; Power-Up Don't Care                                                        ; On                        ; On                        ;
+; Remove Redundant Logic Cells                                               ; Off                       ; Off                       ;
+; Remove Duplicate Registers                                                 ; On                        ; On                        ;
+; Ignore CARRY Buffers                                                       ; Off                       ; Off                       ;
+; Ignore CASCADE Buffers                                                     ; Off                       ; Off                       ;
+; Ignore GLOBAL Buffers                                                      ; Off                       ; Off                       ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                       ; Off                       ;
+; Ignore LCELL Buffers                                                       ; Off                       ; Off                       ;
+; Ignore SOFT Buffers                                                        ; On                        ; On                        ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                       ; Off                       ;
+; Optimization Technique                                                     ; Balanced                  ; Balanced                  ;
+; Carry Chain Length                                                         ; 70                        ; 70                        ;
+; Auto Carry Chains                                                          ; On                        ; On                        ;
+; Auto Open-Drain Pins                                                       ; On                        ; On                        ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                       ; Off                       ;
+; Auto ROM Replacement                                                       ; On                        ; On                        ;
+; Auto RAM Replacement                                                       ; On                        ; On                        ;
+; Auto DSP Block Replacement                                                 ; On                        ; On                        ;
+; Auto Shift Register Replacement                                            ; Auto                      ; Auto                      ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                      ; Auto                      ;
+; Auto Clock Enable Replacement                                              ; On                        ; On                        ;
+; Strict RAM Replacement                                                     ; Off                       ; Off                       ;
+; Allow Synchronous Control Signals                                          ; On                        ; On                        ;
+; Force Use of Synchronous Clear Signals                                     ; Off                       ; Off                       ;
+; Auto RAM Block Balancing                                                   ; On                        ; On                        ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                       ; Off                       ;
+; Auto Resource Sharing                                                      ; Off                       ; Off                       ;
+; Allow Any RAM Size For Recognition                                         ; Off                       ; Off                       ;
+; Allow Any ROM Size For Recognition                                         ; Off                       ; Off                       ;
+; Allow Any Shift Register Size For Recognition                              ; Off                       ; Off                       ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                        ; On                        ;
+; Ignore translate_off and synthesis_off directives                          ; Off                       ; Off                       ;
+; Timing-Driven Synthesis                                                    ; On                        ; On                        ;
+; Report Parameter Settings                                                  ; On                        ; On                        ;
+; Report Source Assignments                                                  ; On                        ; On                        ;
+; Report Connectivity Checks                                                 ; On                        ; On                        ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                       ; Off                       ;
+; Synchronization Register Chain Length                                      ; 2                         ; 2                         ;
+; PowerPlay Power Optimization                                               ; Normal compilation        ; Normal compilation        ;
+; HDL message level                                                          ; Level2                    ; Level2                    ;
+; Suppress Register Optimization Related Messages                            ; Off                       ; Off                       ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                      ; 5000                      ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                      ; 5000                      ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                       ; 100                       ;
+; Clock MUX Protection                                                       ; On                        ; On                        ;
+; Auto Gated Clock Conversion                                                ; Off                       ; Off                       ;
+; Block Design Naming                                                        ; Auto                      ; Auto                      ;
+; SDC constraint protection                                                  ; Off                       ; Off                       ;
+; Synthesis Effort                                                           ; Auto                      ; Auto                      ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                        ; On                        ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                       ; Off                       ;
+; Analysis & Synthesis Message Level                                         ; Medium                    ; Medium                    ;
+; Disable Register Merging Across Hierarchies                                ; Auto                      ; Auto                      ;
+; Resource Aware Inference For Block RAM                                     ; On                        ; On                        ;
+; Synthesis Seed                                                             ; 1                         ; 1                         ;
++----------------------------------------------------------------------------+---------------------------+---------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------------------------------+---------+
+; mantener.vhd                     ; yes             ; User VHDL File                           ; C:/Users/David/Desktop/Proyecto intermedio digitales-dia12/mantener.vhd                  ;         ;
+; sistemaembebidobaloncesto.bdf    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/David/Desktop/Proyecto intermedio digitales-dia12/sistemaembebidobaloncesto.bdf ;         ;
+; 7447.bdf                         ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/others/maxplus2/7447.bdf                                ;         ;
+; nucleo.vhd                       ; yes             ; Auto-Found VHDL File                     ; C:/Users/David/Desktop/Proyecto intermedio digitales-dia12/nucleo.vhd                    ;         ;
+; conversor22.vhd                  ; yes             ; Auto-Found VHDL File                     ; C:/Users/David/Desktop/Proyecto intermedio digitales-dia12/conversor22.vhd               ;         ;
+; contador.vhd                     ; yes             ; Auto-Found VHDL File                     ; C:/Users/David/Desktop/Proyecto intermedio digitales-dia12/contador.vhd                  ;         ;
+; conversor.vhd                    ; yes             ; Auto-Found VHDL File                     ; C:/Users/David/Desktop/Proyecto intermedio digitales-dia12/conversor.vhd                 ;         ;
+; 7485.tdf                         ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/others/maxplus2/7485.tdf                                ;         ;
+; aglobal.inc                      ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal.inc                               ;         ;
+; f7485.bdf                        ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/others/maxplus2/f7485.bdf                               ;         ;
+; uart.vhd                         ; yes             ; Auto-Found VHDL File                     ; C:/Users/David/Desktop/Proyecto intermedio digitales-dia12/uart.vhd                      ;         ;
+; baudios.vhd                      ; yes             ; Auto-Found VHDL File                     ; C:/Users/David/Desktop/Proyecto intermedio digitales-dia12/baudios.vhd                   ;         ;
+; contadoresp.vhd                  ; yes             ; Auto-Found VHDL File                     ; C:/Users/David/Desktop/Proyecto intermedio digitales-dia12/contadoresp.vhd               ;         ;
+; contador4.vhd                    ; yes             ; Auto-Found VHDL File                     ; C:/Users/David/Desktop/Proyecto intermedio digitales-dia12/contador4.vhd                 ;         ;
++----------------------------------+-----------------+------------------------------------------+------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 780    ;
+;                                             ;        ;
+; Total combinational functions               ; 778    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 276    ;
+;     -- 3 input functions                    ; 160    ;
+;     -- <=2 input functions                  ; 342    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 487    ;
+;     -- arithmetic mode                      ; 291    ;
+;                                             ;        ;
+; Total registers                             ; 156    ;
+;     -- Dedicated logic registers            ; 156    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 20     ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; inst86 ;
+; Maximum fan-out                             ; 70     ;
+; Total fan-out                               ; 2781   ;
+; Average fan-out                             ; 2.86   ;
++---------------------------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+; |SistemaEmbebidoBaloncesto ; 778 (9)           ; 156 (0)      ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |SistemaEmbebidoBaloncesto                       ;              ;
+;    |7447:inst3|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7447:inst3            ;              ;
+;    |7485:inst18|           ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst18           ;              ;
+;       |f7485:sub|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst18|f7485:sub ;              ;
+;    |7485:inst20|           ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst20           ;              ;
+;       |f7485:sub|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst20|f7485:sub ;              ;
+;    |7485:inst22|           ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst22           ;              ;
+;       |f7485:sub|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst22|f7485:sub ;              ;
+;    |7485:inst24|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst24           ;              ;
+;       |f7485:sub|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst24|f7485:sub ;              ;
+;    |7485:inst26|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst26           ;              ;
+;       |f7485:sub|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst26|f7485:sub ;              ;
+;    |7485:inst28|           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst28           ;              ;
+;       |f7485:sub|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst28|f7485:sub ;              ;
+;    |7485:inst32|           ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst32           ;              ;
+;       |f7485:sub|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst32|f7485:sub ;              ;
+;    |7485:inst42|           ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst42           ;              ;
+;       |f7485:sub|          ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst42|f7485:sub ;              ;
+;    |7485:inst62|           ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst62           ;              ;
+;       |f7485:sub|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst62|f7485:sub ;              ;
+;    |7485:inst73|           ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst73           ;              ;
+;       |f7485:sub|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|7485:inst73|f7485:sub ;              ;
+;    |Baudios:inst10|        ; 20 (20)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|Baudios:inst10        ;              ;
+;    |CONVERSOR22:inst6|     ; 24 (24)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|CONVERSOR22:inst6     ;              ;
+;    |CONVERSOR:inst1|       ; 36 (36)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|CONVERSOR:inst1       ;              ;
+;    |Nucleo:inst2|          ; 500 (500)         ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|Nucleo:inst2          ;              ;
+;    |UART:inst8|            ; 30 (30)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|UART:inst8            ;              ;
+;    |contador4:inst45|      ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|contador4:inst45      ;              ;
+;    |contador4:inst52|      ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|contador4:inst52      ;              ;
+;    |contador:inst13|       ; 11 (11)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|contador:inst13       ;              ;
+;    |contador:inst48|       ; 42 (42)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|contador:inst48       ;              ;
+;    |contador:inst51|       ; 42 (42)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|contador:inst51       ;              ;
+;    |contador:inst9|        ; 11 (11)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|contador:inst9        ;              ;
+;    |contadoresp:inst49|    ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|contadoresp:inst49    ;              ;
+;    |mantener:inst57|       ; 4 (4)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SistemaEmbebidoBaloncesto|mantener:inst57       ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------+
+; State Machine - |SistemaEmbebidoBaloncesto|UART:inst8|estado               ;
++-------------------+-----------------+------------------+-------------------+
+; Name              ; estado.stop_bit ; estado.read_data ; estado.wait_start ;
++-------------------+-----------------+------------------+-------------------+
+; estado.wait_start ; 0               ; 0                ; 0                 ;
+; estado.read_data  ; 0               ; 1                ; 1                 ;
+; estado.stop_bit   ; 1               ; 0                ; 1                 ;
++-------------------+-----------------+------------------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++-----------------------------------------------------+--------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal      ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------+------------------------+
+; Nucleo:inst2|salida[1]                              ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|salida[3]                              ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|salida[0]                              ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|salida[2]                              ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|disp1                                  ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|disp2                                  ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|disp3                                  ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|disp4                                  ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|disp5                                  ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|disp6                                  ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|disp8                                  ; Nucleo:inst2|disp8       ; yes                    ;
+; Nucleo:inst2|disp9                                  ; Nucleo:inst2|disp9       ; yes                    ;
+; Nucleo:inst2|disp7                                  ; Nucleo:inst2|salida[3]   ; yes                    ;
+; Nucleo:inst2|disp10                                 ; Nucleo:inst2|disp9       ; yes                    ;
+; Nucleo:inst2|disp11                                 ; Nucleo:inst2|disp11      ; yes                    ;
+; mantener:inst57|Outpout                             ; mantener:inst57|Count[1] ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                          ;                        ;
++-----------------------------------------------------+--------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                            ;
++----------------------------------------+--------------------------------------+
+; Register name                          ; Reason for Removal                   ;
++----------------------------------------+--------------------------------------+
+; contador:inst13|Count1[2..7]           ; Stuck at GND due to stuck port clock ;
+; contador:inst13|Count2[0]              ; Stuck at GND due to stuck port clock ;
+; contador:inst13|Count1[1]              ; Stuck at GND due to stuck port clock ;
+; contador:inst13|Count2[1..7]           ; Stuck at GND due to stuck port clock ;
+; contador:inst9|Count1[2..7]            ; Stuck at GND due to stuck port clock ;
+; contador:inst9|Count2[0]               ; Stuck at GND due to stuck port clock ;
+; contador:inst9|Count1[1]               ; Stuck at GND due to stuck port clock ;
+; contador:inst9|Count2[1..7]            ; Stuck at GND due to stuck port clock ;
+; UART:inst8|estado.stop_bit             ; Lost fanout                          ;
+; Total Number of Removed Registers = 31 ;                                      ;
++----------------------------------------+--------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 156   ;
+; Number of registers using Synchronous Clear  ; 52    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 98    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 66    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; contadoresp:inst49|Count[0]            ; 7       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SistemaEmbebidoBaloncesto|UART:inst8|cont[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst28 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst27 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst18 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst17 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst30 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst29 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst22 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst21 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst26 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst25 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst20 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst19 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst32 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst31 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst42 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst41 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst24 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst23 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst62 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst56 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst73 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst72 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst74 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst75 ;
++------------------------+--------------+------------------+
+; Parameter Name         ; Value        ; Type             ;
++------------------------+--------------+------------------+
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE   ;
++------------------------+--------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:08     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Tue May 06 03:00:00 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SistemaEmbebidoBaloncesto -c SistemaEmbebidoBaloncesto
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file mantener.vhd
+    Info (12022): Found design unit 1: mantener-Behavior
+    Info (12023): Found entity 1: mantener
+Warning (12125): Using design file sistemaembebidobaloncesto.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: SistemaEmbebidoBaloncesto
+Info (12127): Elaborating entity "SistemaEmbebidoBaloncesto" for the top level hierarchy
+Warning (275083): Bus "entrada2[0]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[3]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[6]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[7]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[4]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[1]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[2]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[7..0]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[0]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[6]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[4]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[2]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[1]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[3]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[7]" found using same base name as "entrada2", which might lead to a name conflict.
+Warning (275083): Bus "entrada2[7..0]" found using same base name as "entrada", which might lead to a name conflict.
+Warning (275080): Converted elements in bus name "entrada" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "entrada[7..0]" to "entrada7..0"
+Warning (275080): Converted elements in bus name "entrada2" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "entrada2[7..0]" to "entrada27..0"
+Warning (275011): Block or symbol "contador" of instance "inst13" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst15" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst33" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst43" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst4" overlaps another block or symbol
+Warning (275011): Block or symbol "contador4" of instance "inst45" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst50" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst36" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst89" overlaps another block or symbol
+Warning (275085): Found inconsistent dimensions for element "puntosequipo2"
+Warning (275085): Found inconsistent dimensions for element "puntosequipo2"
+Warning (275085): Found inconsistent dimensions for element "temporada"
+Warning (275085): Found inconsistent dimensions for element "temporada"
+Warning (275085): Found inconsistent dimensions for element "temporada"
+Warning (275085): Found inconsistent dimensions for element "temporada"
+Warning (275080): Converted elements in bus name "entrada" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "entrada[7]" to "entrada7"
+    Warning (275081): Converted element name(s) from "entrada[5]" to "entrada5"
+    Warning (275081): Converted element name(s) from "entrada[6]" to "entrada6"
+    Warning (275081): Converted element name(s) from "entrada[1]" to "entrada1"
+    Warning (275081): Converted element name(s) from "entrada[0]" to "entrada0"
+    Warning (275081): Converted element name(s) from "entrada[2]" to "entrada2"
+    Warning (275081): Converted element name(s) from "entrada[3]" to "entrada3"
+    Warning (275081): Converted element name(s) from "entrada[4]" to "entrada4"
+    Warning (275081): Converted element name(s) from "entrada[5]" to "entrada5"
+    Warning (275081): Converted element name(s) from "entrada[5]" to "entrada5"
+    Warning (275081): Converted element name(s) from "entrada[7..0]" to "entrada7..0"
+Warning (275080): Converted elements in bus name "entrada2" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "entrada2[7..0]" to "entrada27..0"
+    Warning (275081): Converted element name(s) from "entrada2[0]" to "entrada20"
+    Warning (275081): Converted element name(s) from "entrada2[3]" to "entrada23"
+    Warning (275081): Converted element name(s) from "entrada2[6]" to "entrada26"
+    Warning (275081): Converted element name(s) from "entrada2[7]" to "entrada27"
+    Warning (275081): Converted element name(s) from "entrada2[4]" to "entrada24"
+    Warning (275081): Converted element name(s) from "entrada2[1]" to "entrada21"
+    Warning (275081): Converted element name(s) from "entrada2[2]" to "entrada22"
+    Warning (275081): Converted element name(s) from "entrada2[7..0]" to "entrada27..0"
+    Warning (275081): Converted element name(s) from "entrada2[0]" to "entrada20"
+    Warning (275081): Converted element name(s) from "entrada2[6]" to "entrada26"
+    Warning (275081): Converted element name(s) from "entrada2[4]" to "entrada24"
+    Warning (275081): Converted element name(s) from "entrada2[2]" to "entrada22"
+    Warning (275081): Converted element name(s) from "entrada2[1]" to "entrada21"
+    Warning (275081): Converted element name(s) from "entrada2[3]" to "entrada23"
+    Warning (275081): Converted element name(s) from "entrada2[7]" to "entrada27"
+Warning (275080): Converted elements in bus name "puntosequipo2" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "puntosequipo2[7..0]" to "puntosequipo27..0"
+    Warning (275081): Converted element name(s) from "puntosequipo2[7..0]" to "puntosequipo27..0"
+Warning (275080): Converted elements in bus name "temporada" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "temporada[3..0]" to "temporada3..0"
+    Warning (275081): Converted element name(s) from "temporada[0]" to "temporada0"
+    Warning (275081): Converted element name(s) from "temporada[1]" to "temporada1"
+    Warning (275081): Converted element name(s) from "temporada[3..0]" to "temporada3..0"
+    Warning (275081): Converted element name(s) from "temporada[3]" to "temporada3"
+    Warning (275081): Converted element name(s) from "temporada[2]" to "temporada2"
+Warning (275008): Primitive "NOT" of instance "inst69" not used
+Info (12128): Elaborating entity "7447" for hierarchy "7447:inst3"
+Info (12130): Elaborated megafunction instantiation "7447:inst3"
+Warning (12125): Using design file nucleo.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Nucleo-Behavioral
+    Info (12023): Found entity 1: Nucleo
+Info (12128): Elaborating entity "Nucleo" for hierarchy "Nucleo:inst2"
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(67): signal "contador2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(70): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(77): signal "entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(79): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(81): signal "entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(95): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(116): signal "entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(129): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(145): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(164): signal "contador2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(166): signal "faltaseqp2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(183): signal "entrada2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(185): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(187): signal "entrada2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(200): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(217): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(233): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(252): signal "puntoseq1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(254): signal "contador2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(256): signal "puntoseq1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(272): signal "contador2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(294): signal "puntoseq1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(307): signal "contador2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(323): signal "contador2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(343): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(345): signal "faltaseqp1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(360): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(362): signal "temporada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(378): signal "puntoseq2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(380): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(382): signal "puntoseq2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(397): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(419): signal "puntoseq2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(432): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at nucleo.vhd(448): signal "contador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "salida", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp3", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp4", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp5", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp6", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp7", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp8", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp9", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp10", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at nucleo.vhd(42): inferring latch(es) for signal or variable "disp11", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "disp11" at nucleo.vhd(42)
+Info (10041): Inferred latch for "disp10" at nucleo.vhd(42)
+Info (10041): Inferred latch for "disp9" at nucleo.vhd(42)
+Info (10041): Inferred latch for "disp8" at nucleo.vhd(42)
+Info (10041): Inferred latch for "disp7" at nucleo.vhd(42)
+Info (10041): Inferred latch for "disp6" at nucleo.vhd(42)
+Info (10041): Inferred latch for "disp5" at nucleo.vhd(42)
+Info (10041): Inferred latch for "disp4" at nucleo.vhd(42)
+Info (10041): Inferred latch for "disp3" at nucleo.vhd(42)
+Info (10041): Inferred latch for "disp2" at nucleo.vhd(42)
+Info (10041): Inferred latch for "disp1" at nucleo.vhd(42)
+Info (10041): Inferred latch for "salida[0]" at nucleo.vhd(42)
+Info (10041): Inferred latch for "salida[1]" at nucleo.vhd(42)
+Info (10041): Inferred latch for "salida[2]" at nucleo.vhd(42)
+Info (10041): Inferred latch for "salida[3]" at nucleo.vhd(42)
+Warning (12125): Using design file conversor22.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: CONVERSOR22-rtl
+    Info (12023): Found entity 1: CONVERSOR22
+Info (12128): Elaborating entity "CONVERSOR22" for hierarchy "CONVERSOR22:inst6"
+Warning (12125): Using design file contador.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: contador-Behavior
+    Info (12023): Found entity 1: contador
+Info (12128): Elaborating entity "contador" for hierarchy "contador:inst9"
+Warning (10492): VHDL Process Statement warning at contador.vhd(13): signal "Resetn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(13): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(13): signal "Count1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(13): signal "Count2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(20): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(27): signal "Resetn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(27): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(27): signal "Count1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(27): signal "Count2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(35): signal "Count1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at contador.vhd(24): inferring latch(es) for signal or variable "Count1", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at contador.vhd(43): signal "Resetn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(43): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(43): signal "Count1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(43): signal "Count2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at contador.vhd(50): signal "Count2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (10041): Inferred latch for "Count1[0]" at contador.vhd(24)
+Warning (12125): Using design file conversor.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: CONVERSOR-rtl
+    Info (12023): Found entity 1: CONVERSOR
+Info (12128): Elaborating entity "CONVERSOR" for hierarchy "CONVERSOR:inst1"
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst28"
+Info (12130): Elaborated megafunction instantiation "7485:inst28"
+Info (12128): Elaborating entity "f7485" for hierarchy "7485:inst28|f7485:sub"
+Info (12131): Elaborated megafunction instantiation "7485:inst28|f7485:sub", which is child of megafunction instantiation "7485:inst28"
+Warning (12125): Using design file uart.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: UART-Behavioral
+    Info (12023): Found entity 1: UART
+Info (12128): Elaborating entity "UART" for hierarchy "UART:inst8"
+Warning (10036): Verilog HDL or VHDL warning at uart.vhd(25): object "iLD" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at uart.vhd(78): signal "DOUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file baudios.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Baudios-rtl
+    Info (12023): Found entity 1: Baudios
+Info (12128): Elaborating entity "Baudios" for hierarchy "Baudios:inst10"
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst27"
+Info (12130): Elaborated megafunction instantiation "7485:inst27"
+Warning (12125): Using design file contadoresp.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: contadoresp-Behavior
+    Info (12023): Found entity 1: contadoresp
+Info (12128): Elaborating entity "contadoresp" for hierarchy "contadoresp:inst49"
+Warning (10492): VHDL Process Statement warning at contadoresp.vhd(13): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "mantener" for hierarchy "mantener:inst57"
+Warning (10492): VHDL Process Statement warning at mantener.vhd(17): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mantener.vhd(21): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mantener.vhd(22): signal "Entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mantener.vhd(23): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at mantener.vhd(12): inferring latch(es) for signal or variable "Outpout", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "Outpout" at mantener.vhd(12)
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst18"
+Info (12130): Elaborated megafunction instantiation "7485:inst18"
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst17"
+Info (12130): Elaborated megafunction instantiation "7485:inst17"
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst29"
+Info (12130): Elaborated megafunction instantiation "7485:inst29"
+Warning (12125): Using design file contador4.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: contador4-Behavior
+    Info (12023): Found entity 1: contador4
+Info (12128): Elaborating entity "contador4" for hierarchy "contador4:inst45"
+Warning (10492): VHDL Process Statement warning at contador4.vhd(13): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst21"
+Info (12130): Elaborated megafunction instantiation "7485:inst21"
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst25"
+Info (12130): Elaborated megafunction instantiation "7485:inst25"
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst32"
+Info (12130): Elaborated megafunction instantiation "7485:inst32"
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst41"
+Info (12130): Elaborated megafunction instantiation "7485:inst41"
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst56"
+Info (12130): Elaborated megafunction instantiation "7485:inst56"
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst72"
+Info (12130): Elaborated megafunction instantiation "7485:inst72"
+Info (12128): Elaborating entity "7485" for hierarchy "7485:inst75"
+Info (12130): Elaborated megafunction instantiation "7485:inst75"
+Info (13014): Ignored 22 buffer(s)
+    Info (13017): Ignored 22 CASCADE buffer(s)
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "7485:inst18|f7485:sub|108" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "7485:inst18|f7485:sub|108" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "7485:inst18|f7485:sub|108" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "7485:inst18|f7485:sub|108" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "7485:inst23|f7485:sub|111" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "7485:inst23|f7485:sub|111" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "7485:inst56|f7485:sub|110" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "7485:inst56|f7485:sub|110" and its non-tri-state driver.
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "UART:inst8|DOUT[7]" to the node "7485:inst18|f7485:sub|108" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "UART:inst8|DOUT[6]" to the node "7485:inst18|f7485:sub|108" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "UART:inst8|DOUT[5]" to the node "7485:inst18|f7485:sub|108" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "UART:inst8|DOUT[4]" to the node "7485:inst18|f7485:sub|108" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "UART:inst8|DOUT[3]" to the node "7485:inst23|f7485:sub|111" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "UART:inst8|DOUT[2]" to the node "7485:inst23|f7485:sub|111" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "UART:inst8|DOUT[1]" to the node "7485:inst56|f7485:sub|110" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "UART:inst8|DOUT[0]" to the node "7485:inst56|f7485:sub|110" into an OR gate
+Warning (13012): Latch Nucleo:inst2|salida[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[0]
+Warning (13012): Latch Nucleo:inst2|salida[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[0]
+Warning (13012): Latch Nucleo:inst2|salida[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[0]
+Warning (13012): Latch Nucleo:inst2|salida[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[0]
+Warning (13012): Latch Nucleo:inst2|disp1 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[0]
+Warning (13012): Latch Nucleo:inst2|disp2 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador2[3]
+Warning (13012): Latch Nucleo:inst2|disp3 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[0]
+Warning (13012): Latch Nucleo:inst2|disp4 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[0]
+Warning (13012): Latch Nucleo:inst2|disp5 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador2[3]
+Warning (13012): Latch Nucleo:inst2|disp6 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador2[3]
+Warning (13012): Latch Nucleo:inst2|disp8 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[3]
+Warning (13012): Latch Nucleo:inst2|disp9 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[0]
+Warning (13012): Latch Nucleo:inst2|disp7 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[0]
+Warning (13012): Latch Nucleo:inst2|disp10 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador[0]
+Warning (13012): Latch Nucleo:inst2|disp11 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Nucleo:inst2|contador2[3]
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register mantener:inst57|Count[0] will power up to Low
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 800 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 18 output pins
+    Info (21061): Implemented 780 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 206 warnings
+    Info: Peak virtual memory: 509 megabytes
+    Info: Processing ended: Tue May 06 03:00:12 2014
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
+
+

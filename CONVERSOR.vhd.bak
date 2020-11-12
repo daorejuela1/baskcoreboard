@@ -1,0 +1,44 @@
+-- LIBRERIAS GENERICAS
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+-- ASÍ SE ESCRIBEN COMENTARIOS EN VHDL
+
+-- LA ENTIDAD DEBE LLEVAR EL MISMO NOMBRE DEL ARCHIVO CON
+-- 	EXTESIÓN VHDL
+entity CONVERSOR is
+    Port (
+	-- SE DEFINE LAS SEÑALES DE ENTRADA, DE 1 BIT
+        Frecuenciainicial : in  STD_LOGIC; 
+		  Frecuenciafinal : out  STD_LOGIC; 
+    -- SE DEFINE LAS SEÑALES DE SALIDA, DE 1 BIT
+    );
+end CONVERSOR;
+-- DE NUEVO EL MISMO NOMBRE DEL ARCHIVO CON
+-- 	EXTESIÓN VHDL
+
+-- EXISTEN VARIOS TIPOS DE ARQUITECTURA EN VHDL,
+--	EN CIRCUITOS DIGITALES SE USARÁ COMPORTAMENTAL
+--	O BEHAVIORAL, DE NUEVO EL MISMO NOMBRE DEL ARCHIVO CON
+-- 	EXTESIÓN VHDL
+architecture rtl of CONVERSOR is
+
+-- LAS CONEXIONES INTERNAS DEBEN DE LLEVAR NOMBRES
+ SIGNAL clkout: std_logic;
+   CONSTANT max: INTEGER := 50000000;
+   CONSTANT half: INTEGER := max/2;
+   SIGNAL count: INTEGER RANGE 0 TO max;
+    
+	
+BEGIN
+   WAIT UNTIL Frecuenciainicial'EVENT and Frecuenciafinal = '1';
+   IF count < max THEN count <= count + 1;
+      ELSE count <= 0;
+   END IF;   
+   IF count < half THEN clkout <= '0';
+      ELSE clkout <= '1';
+   END IF;
+END PROCESS;
+    Frecuenciafinal <= clkout;
+end rtl;
